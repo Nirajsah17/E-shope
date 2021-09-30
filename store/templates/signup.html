@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-5 mx-auto border rounded pt-4">
+            <h3 class="alert alert-success border rounded"> Create an account</h3>
+        <form method="post"action="/signup/">
+            {% csrf_token%}
+            <!--emails-->
+            <div class="form-group">
+                <label for="name1">First name</label>
+                <input type="text" name="fname" class="form-control form-control-sm"id="name1"placeholder="John" required>
+            </div>
+            <div class="form-group">
+                <label for="name2">Last name</label>
+                <input type="text" name="lname" class="form-control form-control-sm"id="name2"placeholder="Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" class="form-control form-control-sm"id="phone"placeholder="+91 8804851174" required>
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" name="email" class="form-control form-control-sm"id="Email"placeholder="Example@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control form-control-sm"id="password"placeholder="************" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Signup"class="btn btn-sm btn-success">
+            </div>
+
+        </form>
+            <h2 class="alert alert-info alert border rounded"role="alert">{{msg}}</h2>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
